@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+checkpoints/
+training_state.pth
+dataset_split.csv
+data/
+*.zip
+.DS_Store
+*.egg-info/
+*.egg
+dist/
+build/
+.env
