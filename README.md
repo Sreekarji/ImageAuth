@@ -61,7 +61,7 @@ Face authentication systems are vulnerable to presentation attacks where an atta
 | Epochs | 21 |
 | Phase 1 (ep 1–10) | Freeze backbone, train head only |
 | Phase 2 (ep 11–21) | Unfreeze all, full fine-tune |
-| Optimizer | AdamW |
+| Optimizer | Adam (weight_decay=1e-4) |
 | Scheduler | ReduceLROnPlateau |
 | Early stopping | Patience = 7 |
 | Workers | persistent_workers = True |
