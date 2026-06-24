@@ -127,7 +127,7 @@ from torchvision import transforms
 from PIL import Image
 
 # Load TorchScript model
-model = torch.jit.load("models/best_model_scripted.pt", map_location="cpu")
+model = torch.jit.load("best_model_scripted.pt", map_location="cpu")
 model.eval()
 
 # Preprocess
@@ -176,12 +176,10 @@ Pillow>=10.0
 ImageAuth/
 ├── README.md
 ├── .gitignore
-├── ImageAuth.ipynb           # Complete notebook (data → training → evaluation → demo)
-├── models/
-│   ├── best_model.pth        # PyTorch state dict
-│   └── best_model_scripted.pt # TorchScript export (deployment-ready)
-├── reports/
-│   └── ImageAuth_report.pdf  # Project report
+├── ImageAuth.ipynb              # Complete notebook (data → training → evaluation → demo)
+├── ImageAuth_report.pdf         # Project report
+├── best_model.pth               # PyTorch state dict
+├── best_model_scripted.pt       # TorchScript export (deployment-ready)
 └── screenshots/
     ├── training_curve.png
     ├── roc_curve.png
