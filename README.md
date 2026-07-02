@@ -93,18 +93,18 @@ Heavy augmentation forces the model to learn texture artifacts rather than memor
 | Threshold | APCER | BPCER | ACER | Status |
 |-----------|-------|-------|------|--------|
 | 0.50 (default) | 30.29% | 0.22% | 15.26% | Too loose |
-| **0.9993 (EER-optimal)** | **5.07%** | **5.06%** | **5.06%** | Too tight (current) |
-| **~0.60 (recommended)** | <15% | <10% | **minimized** | Production-ready |
+| **0.9993 (EER-optimal)** | **5.12%** | **4.97%** | **5.05%** | Too tight (current) |
+| **0.99 (recommended)** | **12.71%** | **1.35%** | **7.03%** | Production-ready |
 
 > **Supervisor feedback**: The EER-optimal threshold (0.9993) is overly restrictive for production.
-> A full threshold sweep from 0.30 to 0.99 is performed in **Section 6B** of the notebook to identify
-> the optimal threshold that keeps APCER < 15% and BPCER < 10% while minimizing ACER. See the
-> threshold sweep analysis below for the recommended value.
+> A full threshold sweep from 0.30 to 0.99 was performed in **Section 6B** of the notebook.
+> The recommended threshold of **0.99** keeps APCER below 15% (security) while minimizing BPCER
+> (user experience), with stable confusion matrix.
 
 **Threshold Sweep**
 ![Threshold Sweep](screenshots/threshold_sweep.png)
 
-The EER-optimal threshold (0.9993) balances false accepts and false rejects mathematically, but is too tight for real-world deployment. The default 0.5 threshold is too loose. The recommended threshold (found via sweep in Section 6B) provides a production-ready decision boundary.
+The EER-optimal threshold (0.9993) balances false accepts and false rejects mathematically, but is too tight for real-world deployment. The default 0.5 threshold is too loose. The recommended threshold of **0.99** provides a production-ready decision boundary: APCER 12.71% (security), BPCER 1.35% (usability), ACER 7.03%.
 
 ### Screenshots
 
